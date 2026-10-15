@@ -100,25 +100,17 @@ The next step is to calculate the bad-loan rate for each loan issue year.
 
 For a given year:
 
-\[
-\text{Bad Rate}
-=
-\frac{\text{Number of Eligible Bad Loans}}
-{\text{Number of Eligible Good and Bad Loans}}
-\]
+**Bad Rate** = Number of Eligible Bad Loans / Number of Eligible Good and Bad Loans
 
 The result is multiplied by 100 when expressed as a percentage.
 
 For example, suppose a year contains:
-
 - 800 eligible good loans
 - 200 eligible bad loans
 
 Then:
 
-\[
-\text{Bad Rate}=\frac{200}{800+200}=20\%
-\]
+**Bad Rate** = 200 / (800 + 200) = **20%**
 
 This calculation uses only records with known outcomes included in the defined good and bad groups.
 
@@ -200,15 +192,11 @@ These are illustrative interpretations, not universal performance thresholds.
 ### Calculating feature strength
 
 For convenient ranking, the audit uses:
-
-\[
-\text{Strength}=2\times|\text{AUC}-0.5|
-\]
+**Feature Strength** = 2 × |AUC − 0.5|
 
 This rescales the distance from random discrimination to a range from 0 to 1.
 
 Examples:
-
 - AUC = 0.50 → strength = 0.00
 - AUC = 0.70 → strength = 0.40
 - AUC = 0.98 → strength = 0.96
@@ -221,13 +209,7 @@ AUC calculation requires usable feature values. For the initial audit, missing n
 
 The resulting audit should also report the percentage of missing values for each feature:
 
-\[
-\text{Missing Percentage}
-=
-\frac{\text{Number of Missing Values}}
-{\text{Total Number of Rows}}
-\times 100
-\]
+**Missing Percentage** = (Number of Missing Values / Total Number of Rows) × 100
 
 Median imputation here is an exploratory convenience, not a final preprocessing decision. In the modeling pipeline, imputation parameters must be learned from the training data only and then applied to validation and test data.
 
