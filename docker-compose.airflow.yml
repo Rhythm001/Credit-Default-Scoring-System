@@ -1,0 +1,23 @@
+name: credit-airflow
+
+services:
+  airflow:
+    image: apache/airflow:2.10.5-python3.11
+    command: standalone
+    environment:
+      AIRFLOW__CORE__LOAD_EXAMPLES: "false"
+      DATABASE_URL: postgresql+psycopg2://credit:credit@db:5432/creditdb
+      PROJECT_DIR: /opt/airflow/project
+      _PIP_ADDITIONAL_REQUIREMENTS: "pandas<2.3 numpy<2"
+    volumes:
+      - ./dags:/opt/airflow/dags
+      - .:/opt/airflow/project
+    ports:
+      - "8080:8080"
+    networks:
+      - credit-net
+
+networks:
+  credit-net:
+    name: credit-scoring_default
+    external: true

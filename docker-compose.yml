@@ -1,0 +1,33 @@
+name: credit-scoring
+
+services:
+  db:
+    image: postgres:16
+    environment:
+      POSTGRES_USER: credit
+      POSTGRES_PASSWORD: credit
+      POSTGRES_DB: creditdb
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U credit -d creditdb"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  api:
+    build: .
+    environment:
+      DATABASE_URL: postgresql+psycopg2://credit:credit@db:5432/creditdb
+    ports:
+      - "8000:8000"
+    depends_on:
+      db:
+        condition: service_healthy
+
+volumes:
+  pgdata:
+    name: credit_pgdata
+    external: true

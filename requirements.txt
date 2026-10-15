@@ -1,0 +1,6 @@
+-r requirements-api.txt
+pyarrow>=14.0
+shap>=0.45
+matplotlib>=3.8
+pytest>=8.0
+httpx>=0.27

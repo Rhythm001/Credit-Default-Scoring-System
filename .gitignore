@@ -1,0 +1,22 @@
+# data: never commit
+data/
+*.csv
+*.csv.gz
+*.parquet
+
+# trained outputs
+artifacts/
+reports/
+
+# environments and caches
+.myenv/
+myenv/
+env/
+__pycache__/
+*.pyc
+.pytest_cache/
+.vscode/
+
+# secrets
+.env
+kaggle.json
