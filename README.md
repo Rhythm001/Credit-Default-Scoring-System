@@ -10,7 +10,7 @@ Work in progress. Steps are committed as they are completed.
 
 - [x] Step 0: Download the data
 - [x] Step 1: Load 2.26M loans into PostgreSQL
-- [ ] Step 2: Explore the data and audit for leakage
+- [x] Step 2: Explore the data and audit for leakage
 - [ ] Step 3: Features and a time-based train/validation/test split
 - [ ] Step 4: WoE scorecard baseline (logistic regression)
 - [ ] Step 5: Monotone-constrained XGBoost and probability calibration
