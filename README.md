@@ -1,6 +1,7 @@
 # Credit Default Scoring System
 ![CI](https://github.com/Rhythm001/Credit-Default-Scoring-System/actions/workflows/ci.yml/badge.svg)
 
+
 An end-to-end credit-risk project: predict the probability that a borrower defaults, turn it into an explainable scorecard, serve it through an API, and monitor it for drift.
 
 Built as a hands-on learning project on the public Lending Club loan data.
