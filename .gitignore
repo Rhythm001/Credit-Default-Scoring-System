@@ -5,7 +5,10 @@ data/
 *.parquet
 
 # trained outputs
-artifacts/
+artifacts/*
+!artifacts/xgb_model.json
+!artifacts/calibrator.joblib
+!artifacts/meta.json
 reports/
 
 # environments and caches
